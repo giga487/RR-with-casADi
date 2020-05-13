@@ -4,8 +4,7 @@ clc
 
 addpath('utils')
 addpath('Dinamica')
-addpath('D:\casadi')
-import casadi.*
+import_casADi
 
 %% 
 a = sym('a', [2 1],'real');
@@ -34,7 +33,7 @@ I2 = [I(2),0,0;
 dinamica_function;
 
 %% OPTIMIZER
-N = 100; % number of control intervals
+N = 250; % number of control intervals
 
 opti = casadi.Opti(); % Optimization problem
 
@@ -73,8 +72,8 @@ end
 opti.subject_to(T>=0); % Time must be positive
 opti.subject_to(q(1,N+1) == qend(1));   
 opti.subject_to(q(2,N+1) == qend(2)); 
-opti.subject_to(-Max_torque < tau(1) < Max_torque);   
-opti.subject_to(-Max_torque < tau(2) < Max_torque); 
+% opti.subject_to(-Max_torque < tau(1) < Max_torque);   
+% opti.subject_to(-Max_torque < tau(2) < Max_torque); 
 
 %% INIT COND
 opti.set_initial(T, 1);
