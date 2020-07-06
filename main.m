@@ -4,7 +4,9 @@ clc
 
 addpath('utils')
 addpath('Dinamica')
-import_casADi
+
+addpath('D:/casadi/');
+import casadi.*
 
 %% 
 a = sym('a', [2 1],'real');

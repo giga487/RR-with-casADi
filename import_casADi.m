@@ -1,2 +1,3 @@
-addpath('D:\casADi')
+
+addpath('D:/casadi/');
 import casadi.*
